@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SangreLima conecta a personas que necesitan sangre con donantes compatibles y cercanos, mediante solicitudes validadas por centros de salud.">
+  <title>SangreLima | Conectamos donantes de sangre en Lima</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="logo" href="#home" aria-label="SangreLima, ir al inicio">
+        <img class="logo__image" src="assets/images/logo-sangrelima.svg" alt="" width="44" height="44">
+        <span class="logo__text">SangreLima</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link main-nav__link--active" href="#home" aria-current="page">Inicio</a></li>
+          <li><a class="main-nav__link" href="#requests">Solicitudes</a></li>
+          <li><a class="main-nav__link" href="#centers">Centros</a></li>
+          <li><a class="main-nav__link" href="#login">Iniciar sesión</a></li>
+          <li><a class="button button--primary button--small" href="#register">Registrarme</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-heading">Donar sangre puede salvar una vida.</h1>
+          <p class="hero__text">Conectamos a personas que necesitan sangre con donantes compatibles mediante solicitudes validadas por centros de salud.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#requests">Necesito sangre</a>
+            <a class="button button--secondary" href="#how-it-works">Quiero donar</a>
+          </div>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Solicitudes verificadas por hospitales</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Alertas para donantes compatibles</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Centros de donación cercanos</li>
+          </ul>
+        </div>
+        <figure class="hero__media">
+          <img src="assets/images/hero-illustration.svg" alt="Gota de sangre con un corazón junto a un hospital, que representa la donación cerca de ti" width="480" height="360">
+        </figure>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section how-it-works" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+        <header class="section__header section__header--center">
+          <h2 class="section__title" id="how-heading">¿Cómo funciona?</h2>
+          <p class="section__subtitle">Un proceso simple, claro y verificado.</p>
+        </header>
+        <ol class="steps">
+          <li class="step-card">
+            <span class="step-card__number" aria-hidden="true">1</span>
+            <div>
+              <h3 class="step-card__title">Registra la solicitud</h3>
+              <p class="step-card__text">Datos del paciente y centro de salud.</p>
+            </div>
+          </li>
+          <li class="step-card">
+            <span class="step-card__number" aria-hidden="true">2</span>
+            <div>
+              <h3 class="step-card__title">El hospital la valida</h3>
+              <p class="step-card__text">Solo se publican solicitudes verificadas.</p>
+            </div>
+          </li>
+          <li class="step-card">
+            <span class="step-card__number" aria-hidden="true">3</span>
+            <div>
+              <h3 class="step-card__title">Conectamos donantes</h3>
+              <p class="step-card__text">Se alerta a personas compatibles y cercanas.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Urgent requests -->
+    <section class="section requests" id="requests" aria-labelledby="requests-heading">
+      <div class="container">
+        <header class="section__header section__header--split">
+          <div>
+            <h2 class="section__title" id="requests-heading">Solicitudes urgentes cerca de ti</h2>
+            <p class="section__subtitle">Pedidos validados por centros de salud. Revisa si puedes ayudar.</p>
+          </div>
+          <span class="tag tag--demo">Solicitudes de ejemplo</span>
+        </header>
+
+        <div class="request-grid">
+          <article class="request-card" aria-labelledby="request-1">
+            <div class="request-card__tags">
+              <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+              <span class="tag tag--urgent">Urgente</span>
+            </div>
+            <p class="request-card__blood-type" aria-label="Tipo de sangre O positivo">O+</p>
+            <h3 class="request-card__title" id="request-1">Hospital Rebagliati</h3>
+            <ul class="request-card__details">
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Jesús María · hace 15 min</li>
+              <li><i class="fa-regular fa-user" aria-hidden="true"></i> Paciente: Caso 001 (demo)</li>
+              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 3</li>
+            </ul>
+            <div class="request-card__actions">
+              <a class="button button--primary button--small" href="#requests">Ver solicitud</a>
+              <a class="text-link" href="#requests">Ver detalles <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+
+          <article class="request-card" aria-labelledby="request-2">
+            <div class="request-card__tags">
+              <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+              <span class="tag tag--urgent">Urgente</span>
+            </div>
+            <p class="request-card__blood-type" aria-label="Tipo de sangre A positivo">A+</p>
+            <h3 class="request-card__title" id="request-2">Clínica San Felipe</h3>
+            <ul class="request-card__details">
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Jesús María · hace 28 min</li>
+              <li><i class="fa-regular fa-user" aria-hidden="true"></i> Paciente: Caso 002 (demo)</li>
+              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 2</li>
+            </ul>
+            <div class="request-card__actions">
+              <a class="button button--primary button--small" href="#requests">Ver solicitud</a>
+              <a class="text-link" href="#requests">Ver detalles <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+
+          <article class="request-card" aria-labelledby="request-3">
+            <div class="request-card__tags">
+              <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+              <span class="tag tag--urgent">Urgente</span>
+            </div>
+            <p class="request-card__blood-type" aria-label="Tipo de sangre B negativo">B-</p>
+            <h3 class="request-card__title" id="request-3">Hospital Dos de Mayo</h3>
+            <ul class="request-card__details">
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cercado de Lima · hace 42 min</li>
+              <li><i class="fa-regular fa-user" aria-hidden="true"></i> Paciente: Caso 003 (demo)</li>
+              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 1</li>
+            </ul>
+            <div class="request-card__actions">
+              <a class="button button--primary button--small" href="#requests">Ver solicitud</a>
+              <a class="text-link" href="#requests">Ver detalles <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__footer">
+          <a class="button button--secondary" href="#requests">Ver más solicitudes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Centers: pending (next feature branch) -->
+    <section class="section centers" id="centers" aria-labelledby="centers-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="centers-heading">Centros de donación</h2>
+          <p class="section__subtitle">Encuentra un centro cercano y revisa cómo llegar.</p>
+        </header>
+        <p class="placeholder-note">Sección en construcción: se implementará en el siguiente avance.</p>
+      </div>
+    </section>
+
+    <p class="demo-note">Prototipo académico de SangreLima · Solicitudes, datos y ubicaciones ilustrativos.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#home" aria-label="SangreLima, ir al inicio">
+          <img class="logo__image" src="assets/images/logo-sangrelima.svg" alt="" width="44" height="44">
+          <span class="logo__text">SangreLima</span>
+        </a>
+        <p>Conectamos solidaridad y esperanza.<br>Un puente entre personas y centros de salud.</p>
+      </div>
+      <nav class="footer__column" aria-label="Plataforma">
+        <h2 class="footer__title">Plataforma</h2>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#requests">Solicitudes</a></li>
+          <li><a href="#centers">Centros de donación</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__column" aria-label="Información">
+        <h2 class="footer__title">Información</h2>
+        <ul>
+          <li><a href="#how-it-works">Cómo funciona</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#privacy">Privacidad y términos</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__column" aria-label="Contacto">
+        <h2 class="footer__title">Contacto</h2>
+        <ul>
+          <li><a href="#contact">Formulario de contacto</a></li>
+          <li><a href="#help">Ayuda y soporte</a></li>
+          <li><a href="#about">Proyecto académico UPC</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="current-year">2026</span> SangreLima. Propuesta académica de diseño UX/UI.</p>
+      <p>Hecho para conectar vidas</p>
+    </div>
+  </footer>
+
+  <script src="assets/scripts/main.js" defer></script>
+</body>
+</html>
