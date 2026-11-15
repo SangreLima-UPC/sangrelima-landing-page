@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SangreLima | Solicitudes prioritizadas para ti</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-4) 0 var(--space-2);
+    }
+    .page-header__title {
+      font-size: 26px;
+      font-weight: 700;
+    }
+    .page-header__subtitle {
+      margin-top: var(--space-1);
+      font-size: 15px;
+      color: var(--color-text-secondary);
+    }
+    .priority-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      padding: var(--space-3);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-card);
+    }
+    .priority-card + .priority-card {
+      margin-top: var(--space-2);
+    }
+    .priority-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+    .priority-card__blood {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .compat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 999px;
+    }
+    .compat-badge--high {
+      color: #ffffff;
+      background-color: var(--color-validated);
+    }
+    .compat-badge--medium {
+      color: var(--color-text);
+      background-color: #fff9c4;
+      border: 1px solid #f9a825;
+    }
+    .priority-card__details {
+      display: grid;
+      gap: 4px;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+    .priority-card__details i {
+      width: 18px;
+      margin-right: 6px;
+      color: var(--color-primary);
+    }
+    .priority-card__actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-1);
+    }
+    .filter-bar {
+      display: flex;
+      gap: var(--space-1);
+      margin-bottom: var(--space-3);
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background-color: var(--color-surface);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+    }
+    .filter-chip--active {
+      background-color: var(--color-primary-light);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .priority-rank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="logo" href="index.html" aria-label="SangreLima, ir al inicio">
+        <img class="logo__image" src="assets/images/logo-sangrelima.svg" alt="" width="44" height="44">
+        <span class="logo__text">SangreLima</span>
+      </a>
+      <nav aria-label="Navegación de donante">
+        <a class="button button--primary button--small" href="us24-donor-alert.html">
+          <i class="fa-solid fa-bell" aria-hidden="true"></i> Mis alertas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="priority-heading">
+      <div class="container">
+
+        <header class="page-header">
+          <h1 class="page-header__title" id="priority-heading">Solicitudes compatibles con tu perfil</h1>
+          <p class="page-header__subtitle">
+            <i class="fa-solid fa-droplet" aria-hidden="true" style="color: var(--color-primary);"></i>
+            Tu tipo de sangre: <strong>O+</strong> · Ordenadas por compatibilidad y cercanía
+          </p>
+        </header>
+
+        <div class="filter-bar" role="group" aria-label="Filtrar solicitudes">
+          <span class="filter-chip filter-chip--active">Todas</span>
+          <span class="filter-chip">Urgentes</span>
+          <span class="filter-chip">Cercanas (&lt; 3 km)</span>
+          <span class="filter-chip">Compatibilidad alta</span>
+        </div>
+
+        <!-- Prioridad 1 -->
+        <article class="priority-card" aria-labelledby="req-p1">
+          <div class="priority-card__header">
+            <div style="display:flex; align-items:center; gap: var(--space-1);">
+              <span class="priority-rank" aria-label="Prioridad 1">1</span>
+              <p class="priority-card__blood" aria-label="Tipo de sangre O positivo">O+</p>
+            </div>
+            <span class="compat-badge compat-badge--high">
+              <i class="fa-solid fa-check" aria-hidden="true"></i> Compatible 100%
+            </span>
+          </div>
+          <h2 class="request-card__title" id="req-p1">Hospital Rebagliati</h2>
+          <ul class="priority-card__details">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Jesús María · 1.2 km de ti</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Publicada hace 15 min</li>
+            <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 3</li>
+            <li><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Urgencia: Alta</li>
+          </ul>
+          <div class="priority-card__actions">
+            <a class="button button--primary button--small" href="us27-request-detail.html">Ver solicitud</a>
+            <span class="tag tag--urgent">Urgente</span>
+            <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+          </div>
+        </article>
+
+        <!-- Prioridad 2 -->
+        <article class="priority-card" aria-labelledby="req-p2">
+          <div class="priority-card__header">
+            <div style="display:flex; align-items:center; gap: var(--space-1);">
+              <span class="priority-rank" aria-label="Prioridad 2">2</span>
+              <p class="priority-card__blood" aria-label="Tipo de sangre O positivo">O+</p>
+            </div>
+            <span class="compat-badge compat-badge--high">
+              <i class="fa-solid fa-check" aria-hidden="true"></i> Compatible 100%
+            </span>
+          </div>
+          <h2 class="request-card__title" id="req-p2">Clínica San Felipe</h2>
+          <ul class="priority-card__details">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Jesús María · 2.4 km de ti</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Publicada hace 28 min</li>
+            <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 2</li>
+            <li><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Urgencia: Alta</li>
+          </ul>
+          <div class="priority-card__actions">
+            <a class="button button--primary button--small" href="us27-request-detail.html">Ver solicitud</a>
+            <span class="tag tag--urgent">Urgente</span>
+            <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+          </div>
+        </article>
+
+        <!-- Prioridad 3 -->
+        <article class="priority-card" aria-labelledby="req-p3">
+          <div class="priority-card__header">
+            <div style="display:flex; align-items:center; gap: var(--space-1);">
+              <span class="priority-rank" aria-label="Prioridad 3">3</span>
+              <p class="priority-card__blood" aria-label="Tipo de sangre A positivo">A+</p>
+            </div>
+            <span class="compat-badge compat-badge--medium">Compatible 75%</span>
+          </div>
+          <h2 class="request-card__title" id="req-p3">Hospital Dos de Mayo</h2>
+          <ul class="priority-card__details">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cercado de Lima · 3.8 km de ti</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Publicada hace 42 min</li>
+            <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades requeridas: 1</li>
+            <li><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Urgencia: Media</li>
+          </ul>
+          <div class="priority-card__actions">
+            <a class="button button--secondary button--small" href="us27-request-detail.html">Ver solicitud</a>
+            <span class="tag tag--validated"><i class="fa-solid fa-check" aria-hidden="true"></i> Validada</span>
+          </div>
+        </article>
+
+        <p class="demo-note" style="margin-top: var(--space-4);">
+          US-22 · Prototipo académico — datos ilustrativos
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__bottom" style="margin-top: 0; border-top: none; padding-top: var(--space-2);">
+      <p>© <span id="current-year">2026</span> SangreLima. Propuesta académica UPC.</p>
+    </div>
+  </footer>
+  <script src="assets/scripts/main.js" defer></script>
+</body>
+</html>

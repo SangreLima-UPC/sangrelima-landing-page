@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SangreLima | Nueva alerta compatible</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <style>
+    .alert-banner {
+      padding: var(--space-3);
+      background-color: var(--color-primary-light);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-medium);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .alert-banner__icon {
+      font-size: 28px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .alert-banner__title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .alert-banner__sub {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-top: 4px;
+    }
+    .alert-card {
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-primary);
+      border-radius: var(--radius-medium);
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      box-shadow: var(--shadow-card);
+    }
+    .alert-card__blood {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      text-align: center;
+    }
+    .alert-card__label {
+      text-align: center;
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: -var(--space-1);
+    }
+    .alert-card__details {
+      display: grid;
+      gap: var(--space-1);
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-2);
+    }
+    .alert-card__details i {
+      width: 20px;
+      margin-right: 8px;
+      color: var(--color-primary);
+    }
+    .alert-card__actions {
+      display: grid;
+      gap: var(--space-1);
+      margin-top: var(--space-1);
+    }
+    .alert-history {
+      margin-top: var(--space-4);
+    }
+    .alert-history__title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    .alert-item {
+      display: flex;
+      gap: var(--space-2);
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 14px;
+    }
+    .alert-item__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .alert-item__dot--muted {
+      background-color: var(--color-border);
+    }
+    .alert-item__time {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="logo" href="index.html" aria-label="SangreLima, ir al inicio">
+        <img class="logo__image" src="assets/images/logo-sangrelima.svg" alt="" width="44" height="44">
+        <span class="logo__text">SangreLima</span>
+      </a>
+      <nav aria-label="Navegación de donante">
+        <a class="button button--secondary button--small" href="us22-donor-priority.html">
+          <i class="fa-solid fa-list" aria-hidden="true"></i> Ver todas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="alert-heading">
+      <div class="container" style="max-width: 560px;">
+
+        <div class="alert-banner" role="alert">
+          <i class="fa-solid fa-bell alert-banner__icon" aria-hidden="true"></i>
+          <div>
+            <p class="alert-banner__title">Nueva solicitud compatible con tu perfil</p>
+            <p class="alert-banner__sub">Recibida hace 2 minutos · Solo verás alertas de tu tipo de sangre</p>
+          </div>
+        </div>
+
+        <h1 style="font-size:20px; font-weight:700; margin-bottom: var(--space-3);" id="alert-heading">
+          Alerta de donación urgente
+        </h1>
+
+        <article class="alert-card" aria-labelledby="alert-hospital">
+          <p class="alert-card__blood" aria-label="Tipo de sangre O positivo">O+</p>
+          <p class="alert-card__label">Tipo de sangre requerido</p>
+
+          <ul class="alert-card__details">
+            <li><i class="fa-solid fa-hospital" aria-hidden="true"></i> <strong id="alert-hospital">Hospital Rebagliati</strong></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Jesús María · 1.2 km de ti</li>
+            <li><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Urgencia: <strong>Alta</strong></li>
+            <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Unidades necesarias: 3</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Publicada hace 15 min</li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span class="tag tag--validated" style="font-size:11px; padding: 2px 10px;">
+                <i class="fa-solid fa-check" aria-hidden="true"></i> Validada por el hospital
+              </span>
+            </li>
+          </ul>
+
+          <div class="alert-card__actions">
+            <a class="button button--primary" href="us25-alert-detail.html">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> Ver solicitud completa
+            </a>
+            <a class="button button--secondary" href="us22-donor-priority.html">
+              No puedo atender esta solicitud
+            </a>
+          </div>
+        </article>
+
+        <div class="alert-history" aria-labelledby="history-title">
+          <h2 class="alert-history__title" id="history-title">Alertas anteriores</h2>
+          <div class="alert-item">
+            <span class="alert-item__dot alert-item__dot--muted" aria-hidden="true"></span>
+            <div>
+              <p>Clínica San Felipe · A+ · Jesús María</p>
+              <p class="alert-item__time">Hace 3 horas · Cubierta</p>
+            </div>
+          </div>
+          <div class="alert-item">
+            <span class="alert-item__dot alert-item__dot--muted" aria-hidden="true"></span>
+            <div>
+              <p>Hospital Dos de Mayo · O+ · Cercado</p>
+              <p class="alert-item__time">Ayer · Cancelada</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="demo-note" style="margin-top: var(--space-4);">
+          US-24 · Prototipo académico — datos ilustrativos
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__bottom" style="margin-top: 0; border-top: none; padding-top: var(--space-2);">
+      <p>© <span id="current-year">2026</span> SangreLima. Propuesta académica UPC.</p>
+    </div>
+  </footer>
+  <script src="assets/scripts/main.js" defer></script>
+</body>
+</html>
