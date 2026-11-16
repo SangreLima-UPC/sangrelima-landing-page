@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SangreLima | Detalle de la alerta</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      margin-bottom: var(--space-3);
+    }
+    .back-link:hover { color: var(--color-primary); }
+
+    .detail-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      border-radius: var(--radius-medium);
+      padding: var(--space-4);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .detail-hero__blood {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .detail-hero__info h1 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .detail-hero__info p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    .detail-section {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-medium);
+      padding: var(--space-3);
+      margin-bottom: var(--space-2);
+    }
+    .detail-section__title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 15px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row__label {
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .detail-row__label i {
+      width: 18px;
+      color: var(--color-primary);
+    }
+    .detail-row__value { font-weight: 600; }
+
+    .urgency-high {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .compat-block {
+      text-align: center;
+      padding: var(--space-2);
+    }
+    .compat-block__pct {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--color-validated);
+      line-height: 1;
+    }
+    .compat-block__label {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-top: 4px;
+    }
+    .cta-sticky {
+      position: sticky;
+      bottom: 0;
+      background-color: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: var(--space-2) var(--space-2);
+      display: grid;
+      gap: var(--space-1);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="logo" href="index.html" aria-label="SangreLima, ir al inicio">
+        <img class="logo__image" src="assets/images/logo-sangrelima.svg" alt="" width="44" height="44">
+        <span class="logo__text">SangreLima</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" style="padding-bottom: 120px;" aria-labelledby="detail-heading">
+      <div class="container" style="max-width: 600px;">
+
+        <a class="back-link" href="us24-donor-alert.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver a la alerta
+        </a>
+
+        <div class="detail-hero" role="region" aria-labelledby="detail-heading">
+          <p class="detail-hero__blood" aria-label="Tipo de sangre O positivo">O+</p>
+          <div class="detail-hero__info">
+            <h1 id="detail-heading">Hospital Rebagliati</h1>
+            <p>Jesús María · Publicada hace 15 min</p>
+            <div style="margin-top: var(--space-1); display:flex; gap: 8px; flex-wrap: wrap;">
+              <span class="tag tag--validated" style="background:rgba(255,255,255,0.2); color:#fff;">
+                <i class="fa-solid fa-check" aria-hidden="true"></i> Validada
+              </span>
+              <span class="tag tag--urgent">Urgente</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compatibilidad -->
+        <div class="detail-section" aria-label="Compatibilidad">
+          <p class="detail-section__title">Tu compatibilidad</p>
+          <div class="compat-block">
+            <p class="compat-block__pct">100%</p>
+            <p class="compat-block__label">Tu tipo O+ es compatible con la solicitud · Puedes donar</p>
+          </div>
+        </div>
+
+        <!-- Datos de la solicitud -->
+        <div class="detail-section" aria-label="Datos de la solicitud">
+          <p class="detail-section__title">Datos de la solicitud</p>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-droplet" aria-hidden="true"></i> Tipo de sangre
+            </span>
+            <span class="detail-row__value">O+ (O positivo)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-vials" aria-hidden="true"></i> Unidades requeridas
+            </span>
+            <span class="detail-row__value">3 unidades</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Urgencia
+            </span>
+            <span class="detail-row__value urgency-high">Alta</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i> Publicada
+            </span>
+            <span class="detail-row__value">Hace 15 minutos</span>
+          </div>
+        </div>
+
+        <!-- Centro de salud -->
+        <div class="detail-section" aria-label="Centro de salud">
+          <p class="detail-section__title">Centro de salud</p>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-hospital" aria-hidden="true"></i> Nombre
+            </span>
+            <span class="detail-row__value">Hospital Rebagliati</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Distrito
+            </span>
+            <span class="detail-row__value">Jesús María, Lima</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">
+              <i class="fa-solid fa-route" aria-hidden="true"></i> Distancia
+            </span>
+            <span class="detail-row__value">1.2 km · ~15 min a pie</span>
+          </div>
+        </div>
+
+        <p class="demo-note">
+          US-25 · Prototipo académico — datos ilustrativos
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="cta-sticky" role="region" aria-label="Acciones">
+    <a class="button button--primary" href="us27-request-detail.html">
+      <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Confirmar disponibilidad
+    </a>
+    <a class="button button--secondary" href="us22-donor-priority.html">
+      No puedo atender esta solicitud
+    </a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer__bottom" style="margin-top: 0; border-top: none; padding-top: var(--space-2);">
+      <p>© <span id="current-year">2026</span> SangreLima. Propuesta académica UPC.</p>
+    </div>
+  </footer>
+  <script src="assets/scripts/main.js" defer></script>
+</body>
+</html>
